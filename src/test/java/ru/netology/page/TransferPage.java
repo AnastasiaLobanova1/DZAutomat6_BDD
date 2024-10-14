@@ -30,16 +30,16 @@ public class TransferPage {
     public void makeTransfer(String amountToTransfer, DataHelper.CardInfo cardInfo) {
         amountInputNew.setValue(amountToTransfer);
         fromInput.setValue(cardInfo.getCardNumber());
-        $(transferButton).click();
+        transferButton.click();
     }
 
     public void errorLimit() {
-        $(errorMessage).should(Condition.exactText("Выполнена попытка перевода суммы, превышающей остаток на карте списания"));
+        errorMessage.should(Condition.exactText("Выполнена попытка перевода суммы, превышающей остаток на карте списания"));
 
     }
 
     public void invalidCard() {
-        $(errorMessage).should(Condition.exactText("Ошибка! Произошла ошибка"));
+        errorMessage.should(Condition.exactText("Ошибка! Произошла ошибка"));
 
 
     }
